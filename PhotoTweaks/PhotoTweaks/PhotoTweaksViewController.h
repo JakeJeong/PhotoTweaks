@@ -76,6 +76,11 @@
 @property (nonatomic, assign) BOOL isHiddenRotateTools;
 
 /**
+ Must Set Crop Area to FourSquare (width  == height)
+ */
+@property (nonatomic, assign) BOOL isMustUseFourSquare;
+
+/**
  Creates a photo tweaks view controller with the image to process.
  */
 - (instancetype)initWithImage:(UIImage *)image;
