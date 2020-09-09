@@ -48,6 +48,7 @@
 - (void)setupSubviews
 {
     self.photoView = [[PhotoTweakView alloc] initWithFrame:self.view.bounds image:self.image maxRotationAngle:self.maxRotationAngle];
+    self.photoView.isMustUseFourSquare = self.isMustUseFourSquare;
     self.photoView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.photoView];
     

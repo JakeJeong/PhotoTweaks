@@ -27,6 +27,7 @@ extern const CGFloat kMaxRotationAngle;
 @end
 
 @interface CropView : UIView
+@property (nonatomic, assign) BOOL isMustUseFourSquare;
 @end
 
 @interface PhotoTweakView : UIView
@@ -38,6 +39,7 @@ extern const CGFloat kMaxRotationAngle;
 @property (nonatomic, strong, readonly) PhotoContentView *photoContentView;
 @property (nonatomic, strong, readonly) UISlider *slider;
 @property (nonatomic, strong, readonly) UIButton *resetBtn;
+@property (nonatomic, assign) BOOL isMustUseFourSquare;
 
 
 - (instancetype)initWithFrame:(CGRect)frame

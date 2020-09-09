@@ -37,6 +37,7 @@
     photoTweaksViewController.delegate = self;
     photoTweaksViewController.autoSaveToLibray = YES;
     photoTweaksViewController.maxRotationAngle = M_PI_4;
+    photoTweaksViewController.isMustUseFourSquare = YES;
     [picker pushViewController:photoTweaksViewController animated:YES];
 }
 

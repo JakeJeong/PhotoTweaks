@@ -292,7 +292,9 @@ typedef NS_ENUM(NSInteger, CropCornerType) {
                 frame.size.height = location.y;
             }
         }
-        
+        if (self.isMustUseFourSquare) {
+            frame.size.width = frame.size.height;
+        }
         self.frame = frame;
         
         // update crop lines
@@ -510,6 +512,7 @@ typedef NS_ENUM(NSInteger, CropCornerType) {
         _cropView = [[CropView alloc] initWithFrame:self.scrollView.frame];
         _cropView.center = self.scrollView.center;
         _cropView.delegate = self;
+        _cropView.isMustUseFourSquare = self.isMustUseFourSquare;
         [self addSubview:_cropView];
         
         UIColor *maskColor = [UIColor maskColor];
@@ -548,6 +551,12 @@ typedef NS_ENUM(NSInteger, CropCornerType) {
         _originalPoint = [self convertPoint:self.scrollView.center toView:self];
     }
     return self;
+}
+- (void)setIsMustUseFourSquare:(BOOL)isMustUseFourSquare {
+    _isMustUseFourSquare = isMustUseFourSquare;
+    if (self.cropView) {
+        self.cropView.isMustUseFourSquare = _isMustUseFourSquare;
+    }
 }
 
 - (instancetype)initWithFrame:(CGRect)frame image:(UIImage *)image
