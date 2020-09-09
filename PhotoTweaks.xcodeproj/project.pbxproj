@@ -32,6 +32,7 @@
 /* Begin PBXFileReference section */
 		00B1B9291ACAA90100A8E285 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PhotoTweaks.strings; sourceTree = "<group>"; };
 		00B1B9361ACAA98400A8E285 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/PhotoTweaks.strings"; sourceTree = "<group>"; };
+		3BDAACE625092F46000A30EC /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/PhotoTweaks.strings; sourceTree = "<group>"; };
 		B71706131A32A18D00A6CC10 /* UIColor+Tweak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Tweak.h"; sourceTree = "<group>"; };
 		B71706141A32A18D00A6CC10 /* UIColor+Tweak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tweak.m"; sourceTree = "<group>"; };
 		CB3496FA1A3207E800C7EB0E /* PhotoTweaksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoTweaksViewController.h; sourceTree = "<group>"; };
@@ -190,9 +191,11 @@
 				TargetAttributes = {
 					CBD5FA521A28425300D4D520 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = H283UH7YFT;
 					};
 					CBD5FA6B1A28425300D4D520 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = H283UH7YFT;
 						TestTargetID = CBD5FA521A28425300D4D520;
 					};
 				};
@@ -202,9 +205,11 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				"zh-Hans",
+				ko,
 			);
 			mainGroup = CBD5FA4A1A28425300D4D520;
 			productRefGroup = CBD5FA541A28425300D4D520 /* Products */;
@@ -275,6 +280,7 @@
 			children = (
 				00B1B9291ACAA90100A8E285 /* en */,
 				00B1B9361ACAA98400A8E285 /* zh-Hans */,
+				3BDAACE625092F46000A30EC /* ko */,
 			);
 			name = PhotoTweaks.strings;
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = H283UH7YFT;
 				INFOPLIST_FILE = PhotoTweaks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -392,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = H283UH7YFT;
 				INFOPLIST_FILE = PhotoTweaks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -404,6 +412,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = H283UH7YFT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -423,6 +432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = H283UH7YFT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

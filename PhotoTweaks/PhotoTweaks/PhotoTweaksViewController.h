@@ -71,6 +71,11 @@
 @property (nonatomic, strong) UIColor *sliderTintColor;
 
 /**
+ Hidden RotateTools
+ */
+@property (nonatomic, assign) BOOL isHiddenRotateTools;
+
+/**
  Creates a photo tweaks view controller with the image to process.
  */
 - (instancetype)initWithImage:(UIImage *)image;

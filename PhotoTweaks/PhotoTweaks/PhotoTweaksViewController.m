@@ -51,8 +51,13 @@
     self.photoView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.photoView];
     
+    CGFloat safeAreaBottom = 0;
+    if (@available(iOS 11.0, *)) {
+        safeAreaBottom = [UIApplication sharedApplication].keyWindow.safeAreaInsets.bottom;
+    }
+    
     UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    cancelBtn.frame = CGRectMake(8, CGRectGetHeight(self.view.frame) - 40, 60, 40);
+    cancelBtn.frame = CGRectMake(8, CGRectGetHeight(self.view.frame) - 40 - safeAreaBottom, 60, 40);
     cancelBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
     [cancelBtn setTitle:NSLocalizedStringFromTable(@"Cancel", @"PhotoTweaks", nil) forState:UIControlStateNormal];
     UIColor *cancelTitleColor = !self.cancelButtonTitleColor ?
@@ -67,7 +72,7 @@
     
     UIButton *cropBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     cropBtn.titleLabel.textAlignment = NSTextAlignmentRight;
-    cropBtn.frame = CGRectMake(CGRectGetWidth(self.view.frame) - 60, CGRectGetHeight(self.view.frame) - 40, 60, 40);
+    cropBtn.frame = CGRectMake(CGRectGetWidth(self.view.frame) - 60, CGRectGetHeight(self.view.frame) - 40 - safeAreaBottom, 60, 40);
     [cropBtn setTitle:NSLocalizedStringFromTable(@"Done", @"PhotoTweaks", nil) forState:UIControlStateNormal];
     UIColor *saveButtonTitleColor = !self.saveButtonTitleColor ?
     [UIColor saveButtonColor] : self.saveButtonTitleColor;
@@ -79,6 +84,11 @@
     cropBtn.titleLabel.font = [UIFont systemFontOfSize:17];
     [cropBtn addTarget:self action:@selector(saveBtnTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:cropBtn];
+    
+    if (self.isHiddenRotateTools) {
+        [self.photoView.slider setHidden:YES];
+        [self.photoView.resetBtn setHidden:YES];
+    }
 }
 
 - (void)cancelBtnTapped
